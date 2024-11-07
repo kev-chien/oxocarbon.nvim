@@ -154,7 +154,7 @@ local function hex__3ergb(hex)
     local char2 = string.sub(hex0, ((i * 2) + 3), ((i * 2) + 3))
     local digit1 = (string.find(hex_chars, char1) - 1)
     local digit2 = (string.find(hex_chars, char2) - 1)
-    do end (ret)[(i + 1)] = (((digit1 * 16) + digit2) / 255)
+    ret[(i + 1)] = (((digit1 * 16) + digit2) / 255)
   end
   return ret
 end
@@ -320,11 +320,11 @@ end
 local function generate_pallete()
   local bghex = random_color({0, 63}, {0, 63}, {0, 63})
   local fghex = random_color({240, 255}, {240, 255}, {240, 255})
-  local palette = {bghex, blend_hex(bghex, fghex, 0.085), blend_hex(bghex, fghex, 0.18), blend_hex(bghex, fghex, 0.3), blend_hex(bghex, fghex, 0.7), blend_hex(bghex, fghex, 0.82), blend_hex(bghex, fghex, 0.95), fghex}
+  local palette = {bghex, blend_hex(bghex, fghex, 0.085), blend_hex(bghex, fghex, 0.18), blend_hex(bghex, fghex, 0.4), blend_hex(bghex, fghex, 0.7), blend_hex(bghex, fghex, 0.82), blend_hex(bghex, fghex, 0.95), fghex}
   local base16_names = {"base00", "base01", "base02", "base03", "base04", "base05", "base06", "base07", "base08", "base09", "base0A", "base0B", "base0C", "base0D", "base0E", "base0F"}
   local base16_palette = {}
   for i, hex in ipairs(palette) do
-    local name = (base16_names)[i]
+    local name = base16_names[i]
     base16_palette[name] = hex
   end
   return base16_palette

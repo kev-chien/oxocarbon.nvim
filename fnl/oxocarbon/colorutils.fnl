@@ -337,7 +337,7 @@
     (local palette [bghex
                     (blend-hex bghex fghex 0.085)
                     (blend-hex bghex fghex 0.18)
-                    (blend-hex bghex fghex 0.3)
+                    (blend-hex bghex fghex 0.4)
                     (blend-hex bghex fghex 0.7)
                     (blend-hex bghex fghex 0.82)
                     (blend-hex bghex fghex 0.95)
